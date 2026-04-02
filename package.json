@@ -1,0 +1,32 @@
+{
+	"name": "ultravisor-beacon-capability",
+	"version": "0.0.1",
+	"description": "Convention-based base class for building Ultravisor beacon capabilities with minimal boilerplate",
+	"main": "source/Ultravisor-Beacon-Capability.cjs",
+	"scripts": {
+		"test": "npx mocha -u tdd --exit --timeout 10000 ./test/*_tests*",
+		"coverage": "npx nyc --reporter=lcov --reporter=text-summary npx mocha -- -u tdd --exit --timeout 10000 ./test/*_tests*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stevenvelozo/ultravisor-beacon-capability.git"
+	},
+	"keywords": [
+		"ultravisor",
+		"beacon",
+		"capability",
+		"task",
+		"automation",
+		"fable"
+	],
+	"author": "Steven Velozo <steven@velozo.com>",
+	"license": "MIT",
+	"dependencies": {
+		"fable-serviceproviderbase": "^3.0.19",
+		"ultravisor-beacon": "^0.0.8"
+	},
+	"devDependencies": {
+		"fable": "^3.0.43",
+		"quackage": "^1.0.65"
+	}
+}
