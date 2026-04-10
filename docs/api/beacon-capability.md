@@ -80,10 +80,10 @@ tmpCap.connect({ ServerURL: 'http://ultravisor:54321' }, (pError) =>
 
 `UltravisorBeaconCapability` extends `fable-serviceproviderbase`, which means your capability instance has access to all standard Fable service features:
 
-- `this.fable` — the Fable instance
-- `this.log` — the Fable logger (`this.log.info()`, `this.log.error()`, etc.)
-- `this.options` — the service options
-- `this.fable.settings` — application settings
-- `this.fable.services` — other registered services
+- `this.fable` -- the Fable instance
+- `this.log` -- the Fable logger (`this.log.info()`, `this.log.error()`, etc.)
+- `this.options` -- the service options
+- `this.fable.settings` -- application settings
+- `this.fable.services` -- other registered services
 
 Multi-level inheritance is supported. Actions defined on base classes are discovered alongside those on derived classes, with derived classes taking precedence on name collision.

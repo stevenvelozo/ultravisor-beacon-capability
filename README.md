@@ -1,26 +1,26 @@
 Ultravisor Beacon Capability
 ============================
 
-A convention-based base class for building Ultravisor beacon capabilities with minimal boilerplate. Extend the class, define action methods with the `action` prefix, and call `connect()` — the module handles beacon registration, transport, and lifecycle automatically.
+A convention-based base class for building Ultravisor beacon capabilities with minimal boilerplate. Extend the class, define action methods with the `action` prefix, and call `connect()` -- the module handles beacon registration, transport, and lifecycle automatically.
 
 ## Features
 
-- **Convention Over Configuration** — Define actions as methods prefixed with `action`; schemas and descriptions as companion getters
-- **Automatic Discovery** — Actions are discovered by walking the prototype chain, including multi-level inheritance
-- **Simplified Handler Signature** — Settings are pre-extracted from work items so handlers receive `(pSettings, pWorkItem, fCallback, fReportProgress)`
-- **Lifecycle Hooks** — Override `onInitialize()` and `onShutdown()` for setup and teardown (database connections, service handles, etc.)
-- **Explicit Registration Escape Hatch** — Use `addAction()` for dynamic or runtime-generated actions alongside convention-based ones
-- **Fable Ecosystem Integration** — Extends `fable-serviceproviderbase`; composes `ultravisor-beacon` internally
+- **Convention Over Configuration** -- Define actions as methods prefixed with `action`; schemas and descriptions as companion getters
+- **Automatic Discovery** -- Actions are discovered by walking the prototype chain, including multi-level inheritance
+- **Simplified Handler Signature** -- Settings are pre-extracted from work items so handlers receive `(pSettings, pWorkItem, fCallback, fReportProgress)`
+- **Lifecycle Hooks** -- Override `onInitialize()` and `onShutdown()` for setup and teardown (database connections, service handles, etc.)
+- **Explicit Registration Escape Hatch** -- Use `addAction()` for dynamic or runtime-generated actions alongside convention-based ones
+- **Fable Ecosystem Integration** -- Extends `fable-serviceproviderbase`; composes `ultravisor-beacon` internally
 
 ## Documentation
 
 Comprehensive documentation is available in the [docs](./docs) folder:
 
-- [Overview](./docs/README.md) — Introduction and getting started
-- [Quick Start](./docs/quickstart.md) — Step-by-step setup guide
-- [Architecture](./docs/architecture.md) — System design and mermaid diagrams
-- [API Reference](./docs/api/README.md) — All classes and methods
-- [Examples](./docs/examples/README.md) — Real-world usage patterns
+- [Overview](./docs/README.md) -- Introduction and getting started
+- [Quick Start](./docs/quickstart.md) -- Step-by-step setup guide
+- [Architecture](./docs/architecture.md) -- System design and mermaid diagrams
+- [API Reference](./docs/api/README.md) -- All classes and methods
+- [Examples](./docs/examples/README.md) -- Real-world usage patterns
 
 ## Install
 
@@ -92,10 +92,10 @@ Once connected, the Ultravisor server automatically creates a task type `beacon-
 
 ## Related Packages
 
-- [ultravisor-beacon](https://github.com/stevenvelozo/ultravisor-beacon) — Underlying beacon client and Fable service
-- [ultravisor](https://github.com/stevenvelozo/ultravisor) — Process supervision and orchestration server
-- [fable](https://github.com/stevenvelozo/fable) — Service dependency injection framework
-- [fable-serviceproviderbase](https://github.com/stevenvelozo/fable-serviceproviderbase) — Service provider base class
+- [ultravisor-beacon](https://github.com/stevenvelozo/ultravisor-beacon) -- Underlying beacon client and Fable service
+- [ultravisor](https://github.com/stevenvelozo/ultravisor) -- Process supervision and orchestration server
+- [fable](https://github.com/stevenvelozo/fable) -- Service dependency injection framework
+- [fable-serviceproviderbase](https://github.com/stevenvelozo/fable-serviceproviderbase) -- Service provider base class
 
 ## License
 

@@ -206,7 +206,7 @@ process.on('SIGTERM', () => { tmpCap.disconnect(() => process.exit(0)); });
 
 ## Key Points
 
-- **No external HTTP library** — uses Node.js built-in `http`/`https` modules
+- **No external HTTP library** -- uses Node.js built-in `http`/`https` modules
 - **Timeout handling** returns results (not errors) so the work item always completes
 - **CheckMultiple** runs all checks in parallel for speed, with progress reporting
 - **Response body** is truncated to 2KB to avoid excessive output

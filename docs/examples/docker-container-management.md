@@ -257,9 +257,9 @@ process.on('SIGTERM', () => { tmpCap.disconnect(() => process.exit(0)); });
 
 ## Key Points
 
-- **Wraps Docker CLI** — requires `docker` to be available on the host
+- **Wraps Docker CLI** -- requires `docker` to be available on the host
 - **RestartContainer** verifies the container is running after restart
-- **PruneSystem** is sequential (containers → images → networks → volumes) with progress reporting
+- **PruneSystem** is sequential (containers -> images -> networks -> volumes) with progress reporting
 - **OlderThanHours** filter prevents pruning of recently used resources
 - **ContainerLogs** captures both stdout and stderr via `2>&1`
 - Useful for managing Docker hosts where you want centralized visibility and control through Ultravisor

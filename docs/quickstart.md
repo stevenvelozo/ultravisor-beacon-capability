@@ -184,7 +184,7 @@ The result will contain the output in `Outputs.FileList`.
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `ServerURL` | `string` | — | Ultravisor server endpoint (required) |
+| `ServerURL` | `string` | -- | Ultravisor server endpoint (required) |
 | `Name` | `string` | `capabilityName` | Beacon name for registration |
 | `Password` | `string` | `''` | Authentication password |
 | `MaxConcurrent` | `number` | `1` | Maximum parallel work items |
@@ -194,6 +194,6 @@ The result will contain the output in `Outputs.FileList`.
 
 ## Next Steps
 
-- [Architecture](architecture.md) — Understand the component design
-- [API Reference](api/README.md) — Complete method documentation
-- [Examples](examples/README.md) — Real-world usage patterns
+- [Architecture](architecture.md) -- Understand the component design
+- [API Reference](api/README.md) -- Complete method documentation
+- [Examples](examples/README.md) -- Real-world usage patterns

@@ -193,7 +193,7 @@ process.on('SIGTERM', () => { tmpCap.disconnect(() => process.exit(0)); });
 
 ## Key Points
 
-- **DryRun defaults to `true`** — a safe default that shows what would be deleted without actually deleting
+- **DryRun defaults to `true`** -- a safe default that shows what would be deleted without actually deleting
 - **File list is capped** at 200 entries in the output to prevent excessive payload sizes
 - **ScanUsage** provides a quick overview of disk consumption by file type before deciding what to clean
 - Schedule `PurgeByAge` weekly to keep log directories from growing unbounded

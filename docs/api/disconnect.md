@@ -12,7 +12,7 @@ disconnect(fCallback)
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `fCallback` | `function` | `function(pError)` — called when disconnection completes |
+| `fCallback` | `function` | `function(pError)` -- called when disconnection completes |
 
 ## Behavior
 
@@ -45,6 +45,6 @@ process.on('SIGTERM', () =>
 
 ## Notes
 
-- Safe to call when not connected — it is a no-op
-- Safe to call without a callback — errors are silently ignored
+- Safe to call when not connected -- it is a no-op
+- Safe to call without a callback -- errors are silently ignored
 - After disconnecting, you can call `connect()` again to reconnect

@@ -205,7 +205,7 @@ process.on('SIGTERM', () => { tmpCap.disconnect(() => process.exit(0)); });
 
 ## Key Points
 
-- **No external dependencies** — uses Node.js built-in `tls` module
+- **No external dependencies** -- uses Node.js built-in `tls` module
 - **Warning threshold** is configurable (default 30 days)
 - **Results sorted** by soonest expiry for quick scanning
 - **rejectUnauthorized: false** ensures expired or self-signed certs are still inspected (not rejected)

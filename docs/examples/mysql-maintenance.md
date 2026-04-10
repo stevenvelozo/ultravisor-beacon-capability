@@ -1,6 +1,6 @@
 # Example: MySQL Maintenance
 
-A capability for recurring MySQL database maintenance tasks — purging old records, optimizing tables, and exporting query results.
+A capability for recurring MySQL database maintenance tasks -- purging old records, optimizing tables, and exporting query results.
 
 ## Full Source
 

@@ -11,10 +11,10 @@ An action named `DoSomething` consists of up to three members:
 ```javascript
 actionDoSomething(pSettings, pWorkItem, fCallback, fReportProgress)
 {
-	// pSettings — pre-extracted from pWorkItem.Settings (defaults to {} if missing)
-	// pWorkItem — the full work item object from Ultravisor
-	// fCallback — function(pError, pResult) where pResult = { Outputs: {...}, Log: [...] }
-	// fReportProgress — optional function({ Percent, Message, Step, TotalSteps })
+	// pSettings -- pre-extracted from pWorkItem.Settings (defaults to {} if missing)
+	// pWorkItem -- the full work item object from Ultravisor
+	// fCallback -- function(pError, pResult) where pResult = { Outputs: {...}, Log: [...] }
+	// fReportProgress -- optional function({ Percent, Message, Step, TotalSteps })
 
 	return fCallback(null, { Outputs: { Result: 'done' } });
 }
@@ -80,8 +80,8 @@ fCallback(null, {
 fCallback(new Error('Something went wrong'));
 ```
 
-- `Outputs` — key-value pairs available as task state outputs on the Ultravisor server
-- `Log` — array of log strings recorded with the work item result
+- `Outputs` -- key-value pairs available as task state outputs on the Ultravisor server
+- `Log` -- array of log strings recorded with the work item result
 
 ## Progress Reporting
 

@@ -14,7 +14,7 @@ The module exports `UltravisorBeaconCapability`, a class that extends `fable-ser
 
 | Class | Description |
 |-------|-------------|
-| [UltravisorBeaconCapability](beacon-capability.md) | Base class — extend to define capabilities with action methods |
+| [UltravisorBeaconCapability](beacon-capability.md) | Base class -- extend to define capabilities with action methods |
 
 ## Convention
 

@@ -13,13 +13,13 @@ connect(pBeaconConfig, fCallback)
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `pBeaconConfig` | `object` | Connection configuration (see below) |
-| `fCallback` | `function` | `function(pError, pBeaconInfo)` — called when connection completes or fails |
+| `fCallback` | `function` | `function(pError, pBeaconInfo)` -- called when connection completes or fails |
 
 ### Configuration
 
 | Property | Type | Default | Required | Description |
 |----------|------|---------|----------|-------------|
-| `ServerURL` | `string` | — | Yes | Ultravisor server URL (e.g. `http://localhost:54321`) |
+| `ServerURL` | `string` | -- | Yes | Ultravisor server URL (e.g. `http://localhost:54321`) |
 | `Name` | `string` | `capabilityName` | No | Beacon worker name for registration |
 | `Password` | `string` | `''` | No | Authentication password |
 | `MaxConcurrent` | `number` | `1` | No | Maximum number of work items to execute in parallel |

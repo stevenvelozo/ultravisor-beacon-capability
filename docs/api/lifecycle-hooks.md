@@ -14,11 +14,11 @@ onInitialize(fCallback)
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `fCallback` | `function` | `function(pError)` — call with `null` on success, or an error to abort |
+| `fCallback` | `function` | `function(pError)` -- call with `null` on success, or an error to abort |
 
 ### Default
 
-No-op — calls `fCallback(null)` immediately.
+No-op -- calls `fCallback(null)` immediately.
 
 ### Example
 
@@ -58,11 +58,11 @@ onShutdown(fCallback)
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `fCallback` | `function` | `function(pError)` — call with `null` on success |
+| `fCallback` | `function` | `function(pError)` -- call with `null` on success |
 
 ### Default
 
-No-op — calls `fCallback(null)` immediately.
+No-op -- calls `fCallback(null)` immediately.
 
 ### Example
 

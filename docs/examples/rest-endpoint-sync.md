@@ -233,7 +233,7 @@ process.on('SIGTERM', () => { tmpCap.disconnect(() => process.exit(0)); });
 
 ## Key Points
 
-- **No external HTTP library** — uses Node.js built-in modules
+- **No external HTTP library** -- uses Node.js built-in modules
 - **RecordsPath** supports dot-notation for extracting arrays from nested JSON (e.g. `data.results`)
 - **Sequential POSTs** avoid overwhelming the destination API; use `MaxConcurrent` on the beacon config for parallelism at the work item level
 - **DryRun** fetches from source but skips destination writes

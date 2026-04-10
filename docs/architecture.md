@@ -109,9 +109,9 @@ flowchart TD
 ```
 
 Key behaviors:
-- **Subclass wins** — If a method name is seen on a derived class, the base class version is skipped
-- **Getters supported** — `_Schema` and `_Description` companions can be ES class getters, plain properties, or methods
-- **Bound handlers** — Each handler is bound to the instance, preserving `this` context for access to services, connections, and state
+- **Subclass wins** -- If a method name is seen on a derived class, the base class version is skipped
+- **Getters supported** -- `_Schema` and `_Description` companions can be ES class getters, plain properties, or methods
+- **Bound handlers** -- Each handler is bound to the instance, preserving `this` context for access to services, connections, and state
 
 ## Handler Wrapping
 

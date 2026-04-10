@@ -19,7 +19,7 @@ addAction(pName, pDefinition)
 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
-| `Handler` | `function` | Yes | `function(pWorkItem, pContext, fCallback, fReportProgress)` — uses the **raw** beacon handler signature |
+| `Handler` | `function` | Yes | `function(pWorkItem, pContext, fCallback, fReportProgress)` -- uses the **raw** beacon handler signature |
 | `Description` | `string` | No | Human-readable description |
 | `SettingsSchema` | `array` | No | Array of field definitions |
 
@@ -61,8 +61,8 @@ tmpCap.connect({ ServerURL: 'http://ultravisor:54321' }, (pError) => { });
 
 | Scenario | Use Convention | Use addAction |
 |----------|---------------|---------------|
-| Standard action with known schema | Yes | — |
-| Action generated from config at runtime | — | Yes |
+| Standard action with known schema | Yes | -- |
+| Action generated from config at runtime | -- | Yes |
 | Action wrapping an external library callback | Either | Yes (simpler) |
-| Action that needs the raw `pContext` parameter | — | Yes |
-| Multiple capabilities sharing a common action | — | Yes |
+| Action that needs the raw `pContext` parameter | -- | Yes |
+| Multiple capabilities sharing a common action | -- | Yes |

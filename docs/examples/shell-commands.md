@@ -1,6 +1,6 @@
 # Example: Shell Commands
 
-Wrap basic shell commands as beacon actions. This is the simplest possible capability — each action executes a shell command and returns the output.
+Wrap basic shell commands as beacon actions. This is the simplest possible capability -- each action executes a shell command and returns the output.
 
 ## Full Source
 
@@ -172,5 +172,5 @@ process.on('SIGTERM', () => { tmpCap.disconnect(() => process.exit(0)); });
 ## Key Points
 
 - `exec` timeout prevents long-running commands from hanging
-- Failed commands return results with `Success: false` rather than calling `fCallback(pError)` — this ensures the work item completes (with error data in Outputs) rather than being marked as a hard failure
+- Failed commands return results with `Success: false` rather than calling `fCallback(pError)` -- this ensures the work item completes (with error data in Outputs) rather than being marked as a hard failure
 - `maxBuffer` is raised to 10MB for commands that produce large output
