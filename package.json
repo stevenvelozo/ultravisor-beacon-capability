@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"fable": "^3.0.43",
+		"pict-docuserve": "^0.1.5",
 		"quackage": "^1.1.0"
 	}
 }
