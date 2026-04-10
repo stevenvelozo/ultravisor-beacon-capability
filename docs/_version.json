@@ -2,6 +2,6 @@
 	"Name": "ultravisor-beacon-capability",
 	"Version": "0.0.1",
 	"Description": "Convention-based base class for building Ultravisor beacon capabilities with minimal boilerplate",
-	"GeneratedAt": "2026-04-10T01:49:42.296Z",
-	"GitCommit": "6805f6d"
+	"GeneratedAt": "2026-04-10T02:05:24.824Z",
+	"GitCommit": "b7c6f38"
 }
