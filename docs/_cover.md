@@ -1,4 +1,4 @@
-# Ultravisor Beacon Capability <small>0.0.1</small>
+# Ultravisor Beacon Capability
 
 > Convention-based base class for building Ultravisor beacon capabilities
 
