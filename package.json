@@ -1,6 +1,6 @@
 {
 	"name": "ultravisor-beacon-capability",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Convention-based base class for building Ultravisor beacon capabilities with minimal boilerplate",
 	"main": "source/Ultravisor-Beacon-Capability.cjs",
 	"scripts": {
@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"fable": "^3.1.72",
-		"pict-docuserve": "^1.0.1",
+		"pict-docuserve": "^1.2.0",
 		"quackage": "^1.2.3"
 	}
 }
