@@ -23,11 +23,11 @@
 	"license": "MIT",
 	"dependencies": {
 		"fable-serviceproviderbase": "^3.0.19",
-		"ultravisor-beacon": "^0.0.8"
+		"ultravisor-beacon": "^0.0.15"
 	},
 	"devDependencies": {
-		"fable": "^3.0.43",
-		"pict-docuserve": "^0.1.5",
-		"quackage": "^1.1.0"
+		"fable": "^3.1.72",
+		"pict-docuserve": "^1.0.1",
+		"quackage": "^1.2.3"
 	}
 }
