@@ -1,6 +1,8 @@
 Ultravisor Beacon Capability
 ============================
 
+> **[Read the Ultravisor Beacon Capability Documentation](https://stevenvelozo.github.io/ultravisor-beacon-capability/)**
+
 A convention-based base class for building Ultravisor beacon capabilities with minimal boilerplate. Extend the class, define action methods with the `action` prefix, and call `connect()` -- the module handles beacon registration, transport, and lifecycle automatically.
 
 ## Features
