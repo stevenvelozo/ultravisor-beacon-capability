@@ -97,7 +97,7 @@ Without this module, registering a single capability requires approximately 60 l
 
 ## Related Packages
 
-- [ultravisor-beacon](https://github.com/stevenvelozo/ultravisor-beacon) -- Underlying beacon client and Fable service
+- [ultravisor-beacon](https://stevenvelozo.github.io/ultravisor-beacon/) -- Underlying beacon client and Fable service
 - [ultravisor](https://stevenvelozo.github.io/ultravisor/) -- Process supervision and orchestration server
 - [fable](https://github.com/stevenvelozo/fable) -- Service dependency injection framework
 - [fable-serviceproviderbase](https://github.com/stevenvelozo/fable-serviceproviderbase) -- Service provider base class
