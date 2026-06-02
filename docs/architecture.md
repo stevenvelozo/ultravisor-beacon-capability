@@ -4,35 +4,8 @@ Ultravisor Beacon Capability is a thin convention layer on top of `ultravisor-be
 
 ## Class Hierarchy
 
-```mermaid
-graph TD
-    FSPB[fable-serviceproviderbase<br/><small>Fable service base class</small>]
-    UBC[UltravisorBeaconCapability<br/><small>Convention-based base class</small>]
-    YOUR[YourCapability<br/><small>Your subclass with action methods</small>]
-
-    AM[ActionMap<br/><small>Prototype chain walker</small>]
-    UBS[UltravisorBeaconService<br/><small>ultravisor-beacon</small>]
-
-    CM[CapabilityManager<br/><small>Descriptor store</small>]
-    BC[BeaconClient<br/><small>Transport + polling</small>]
-    PR[ProviderRegistry<br/><small>Provider index</small>]
-    CA[CapabilityAdapter<br/><small>Descriptor to provider bridge</small>]
-
-    FSPB -->|extends| UBC
-    UBC -->|extends| YOUR
-    UBC -->|uses| AM
-    UBC -->|composes| UBS
-
-    UBS --> CM
-    UBS --> BC
-    CM -->|buildProviderDescriptors| CA
-    CA -->|registerProvider| PR
-    BC --> PR
-
-    style UBC fill:#e1f5fe
-    style YOUR fill:#c8e6c9
-    style AM fill:#fff3e0
-```
+<!-- bespoke diagram: edit diagrams/class-hierarchy.mmd or .hints.json, then: npx pict-renderer-graph build modules/fable/ultravisor-beacon-capability/docs -->
+![Class Hierarchy](diagrams/class-hierarchy.svg)
 
 ## Module Composition
 
@@ -48,65 +21,15 @@ The capability base class composes three internal concerns:
 
 When you call `connect()`, the following sequence executes:
 
-```mermaid
-sequenceDiagram
-    participant Dev as Your Code
-    participant Cap as BeaconCapability
-    participant AM as ActionMap
-    participant BS as BeaconService
-    participant UV as Ultravisor Server
-
-    Dev->>Cap: connect({ ServerURL, Name, ... })
-    Cap->>AM: buildActionMap(this)
-    AM-->>Cap: { ActionName: { Handler, Schema, Description } }
-    Cap->>Cap: Merge explicit actions (addAction)
-    Cap->>Cap: Build capability descriptor
-    Cap->>BS: new UltravisorBeaconService(config)
-    Cap->>BS: registerCapability(descriptor)
-    Cap->>BS: enable()
-    BS->>UV: POST /1.0/Authenticate
-    UV-->>BS: session cookie
-    BS->>UV: POST /Beacon/Register
-    UV-->>BS: { BeaconID }
-    UV->>UV: Create task types for each action
-    BS-->>Cap: callback(null, beaconInfo)
-    Cap-->>Dev: callback(null, beaconInfo)
-
-    Note over UV: Task types now available:<br/>beacon-{capability}-{action}
-```
+<!-- bespoke diagram: edit diagrams/connect-flow.mmd or .hints.json, then: npx pict-renderer-graph build modules/fable/ultravisor-beacon-capability/docs -->
+![Connect Flow](diagrams/connect-flow.svg)
 
 ## Action Discovery
 
 The `buildActionMap()` function walks the prototype chain of your capability instance to find action methods:
 
-```mermaid
-flowchart TD
-    START([Start]) --> PROTO[Get prototype of instance]
-    PROTO --> CHECK{prototype !== Object.prototype?}
-    CHECK -->|No| DONE([Return action map])
-    CHECK -->|Yes| PROPS[Get own property names]
-    PROPS --> EACH{Next property name}
-    EACH -->|None left| NEXT[Get parent prototype]
-    NEXT --> CHECK
-
-    EACH -->|Has name| VISITED{Already visited?}
-    VISITED -->|Yes| EACH
-    VISITED -->|No| PREFIX{Starts with 'action'?}
-    PREFIX -->|No| EACH
-    PREFIX -->|Yes| SUFFIX{Ends with '_Schema' or '_Description'?}
-    SUFFIX -->|Yes| EACH
-    SUFFIX -->|No| FUNC{Is a function?}
-    FUNC -->|No| EACH
-    FUNC -->|Yes| EXTRACT[Strip 'action' prefix to get action name]
-    EXTRACT --> SCHEMA[Resolve companion _Schema]
-    SCHEMA --> DESC[Resolve companion _Description]
-    DESC --> HANDLER[Create bound handler with Settings extraction]
-    HANDLER --> ADD[Add to action map]
-    ADD --> EACH
-
-    style EXTRACT fill:#c8e6c9
-    style HANDLER fill:#c8e6c9
-```
+<!-- bespoke diagram: edit diagrams/action-discovery.mmd or .hints.json, then: npx pict-renderer-graph build modules/fable/ultravisor-beacon-capability/docs -->
+![Action Discovery](diagrams/action-discovery.svg)
 
 Key behaviors:
 - **Subclass wins** -- If a method name is seen on a derived class, the base class version is skipped
@@ -163,22 +86,8 @@ The `initialize` and `shutdown` functions delegate to `onInitialize()` and `onSh
 
 When the Ultravisor server receives the beacon registration, its coordinator automatically creates task types for each action:
 
-```mermaid
-graph LR
-    REG[Beacon registers<br/>Capability: DBMaint<br/>Actions: PurgeOld, Vacuum] --> COORD[Coordinator]
-    COORD --> T1[Task Type:<br/>beacon-dbmaint-purgeold]
-    COORD --> T2[Task Type:<br/>beacon-dbmaint-vacuum]
-
-    T1 --> UI[Ultravisor Dashboard]
-    T2 --> UI
-    T1 --> SCHED[Scheduler]
-    T2 --> SCHED
-    T1 --> GRAPH[Operation Graphs]
-    T2 --> GRAPH
-
-    style T1 fill:#e1f5fe
-    style T2 fill:#e1f5fe
-```
+<!-- bespoke diagram: edit diagrams/server-side-task-registration.mmd or .hints.json, then: npx pict-renderer-graph build modules/fable/ultravisor-beacon-capability/docs -->
+![Server-Side Task Registration](diagrams/server-side-task-registration.svg)
 
 Each task type includes:
 - **SettingsInputs** derived from the action's `SettingsSchema`

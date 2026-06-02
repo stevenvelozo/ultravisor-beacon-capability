@@ -1,0 +1,27 @@
+graph TD
+    FSPB[fable-serviceproviderbase<br/><small>Fable service base class</small>]
+    UBC[UltravisorBeaconCapability<br/><small>Convention-based base class</small>]
+    YOUR[YourCapability<br/><small>Your subclass with action methods</small>]
+
+    AM[ActionMap<br/><small>Prototype chain walker</small>]
+    UBS[UltravisorBeaconService<br/><small>ultravisor-beacon</small>]
+
+    CM[CapabilityManager<br/><small>Descriptor store</small>]
+    BC[BeaconClient<br/><small>Transport + polling</small>]
+    PR[ProviderRegistry<br/><small>Provider index</small>]
+    CA[CapabilityAdapter<br/><small>Descriptor to provider bridge</small>]
+
+    FSPB -->|extends| UBC
+    UBC -->|extends| YOUR
+    UBC -->|uses| AM
+    UBC -->|composes| UBS
+
+    UBS --> CM
+    UBS --> BC
+    CM -->|buildProviderDescriptors| CA
+    CA -->|registerProvider| PR
+    BC --> PR
+
+    style UBC fill:#e1f5fe
+    style YOUR fill:#c8e6c9
+    style AM fill:#fff3e0

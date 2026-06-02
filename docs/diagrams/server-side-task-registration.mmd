@@ -1,0 +1,14 @@
+graph LR
+    REG[Beacon registers<br/>Capability: DBMaint<br/>Actions: PurgeOld, Vacuum] --> COORD[Coordinator]
+    COORD --> T1[Task Type:<br/>beacon-dbmaint-purgeold]
+    COORD --> T2[Task Type:<br/>beacon-dbmaint-vacuum]
+
+    T1 --> UI[Ultravisor Dashboard]
+    T2 --> UI
+    T1 --> SCHED[Scheduler]
+    T2 --> SCHED
+    T1 --> GRAPH[Operation Graphs]
+    T2 --> GRAPH
+
+    style T1 fill:#e1f5fe
+    style T2 fill:#e1f5fe

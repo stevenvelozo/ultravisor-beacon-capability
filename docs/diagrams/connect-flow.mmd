@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant Dev as Your Code
+    participant Cap as BeaconCapability
+    participant AM as ActionMap
+    participant BS as BeaconService
+    participant UV as Ultravisor Server
+
+    Dev->>Cap: connect({ ServerURL, Name, ... })
+    Cap->>AM: buildActionMap(this)
+    AM-->>Cap: { ActionName: { Handler, Schema, Description } }
+    Cap->>Cap: Merge explicit actions (addAction)
+    Cap->>Cap: Build capability descriptor
+    Cap->>BS: new UltravisorBeaconService(config)
+    Cap->>BS: registerCapability(descriptor)
+    Cap->>BS: enable()
+    BS->>UV: POST /1.0/Authenticate
+    UV-->>BS: session cookie
+    BS->>UV: POST /Beacon/Register
+    UV-->>BS: { BeaconID }
+    UV->>UV: Create task types for each action
+    BS-->>Cap: callback(null, beaconInfo)
+    Cap-->>Dev: callback(null, beaconInfo)
+
+    Note over UV: Task types now available:<br/>beacon-{capability}-{action}

@@ -1,0 +1,26 @@
+flowchart TD
+    START([Start]) --> PROTO[Get prototype of instance]
+    PROTO --> CHECK{prototype !== Object.prototype?}
+    CHECK -->|No| DONE([Return action map])
+    CHECK -->|Yes| PROPS[Get own property names]
+    PROPS --> EACH{Next property name}
+    EACH -->|None left| NEXT[Get parent prototype]
+    NEXT --> CHECK
+
+    EACH -->|Has name| VISITED{Already visited?}
+    VISITED -->|Yes| EACH
+    VISITED -->|No| PREFIX{Starts with 'action'?}
+    PREFIX -->|No| EACH
+    PREFIX -->|Yes| SUFFIX{Ends with '_Schema' or '_Description'?}
+    SUFFIX -->|Yes| EACH
+    SUFFIX -->|No| FUNC{Is a function?}
+    FUNC -->|No| EACH
+    FUNC -->|Yes| EXTRACT[Strip 'action' prefix to get action name]
+    EXTRACT --> SCHEMA[Resolve companion _Schema]
+    SCHEMA --> DESC[Resolve companion _Description]
+    DESC --> HANDLER[Create bound handler with Settings extraction]
+    HANDLER --> ADD[Add to action map]
+    ADD --> EACH
+
+    style EXTRACT fill:#c8e6c9
+    style HANDLER fill:#c8e6c9
