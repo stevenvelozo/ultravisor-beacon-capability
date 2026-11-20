@@ -1,6 +1,6 @@
 {
 	"name": "ultravisor-beacon-capability",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Convention-based base class for building Ultravisor beacon capabilities with minimal boilerplate",
 	"main": "source/Ultravisor-Beacon-Capability.cjs",
 	"files": [
